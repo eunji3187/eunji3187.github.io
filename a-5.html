@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신간 도서</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #fffbfa;
+            font-family: "돋움";
+            font-size: 15px;
+        }
+        li {
+            list-style-type: none;
+        }
+
+        #right {
+            width: 700px;
+            margin: 0 auto;
+        }
+
+        #main_title {
+            width: 100%;
+            padding: 15px 0;
+            margin: 5px 0;
+            border-bottom: 1px solid #444444;
+            font-size: 20px;
+            font-weight: bold;
+            color: black;
+            text-align: center;
+        }
+
+        #main_img {
+            display: block;
+            margin: 15px auto 24px;
+        }
+
+        #thumnail {
+            padding-top: 30px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        #thumnail #move_left,
+        #thumnail #move_right {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 20px;
+        }
+
+        #photos {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        #photos li {
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        #photos img {
+            width: 50px;
+            height: 50px;
+            border: 3px solid #3d3d3d;
+            transition: border 0.3s;
+        }
+        #photos a:hover img {
+            border: 3px solid #ffffff;
+        }
+
+        .header {
+            padding: 30px;
+            text-align: center;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        
+        
+        .topnav {
+            overflow: hidden;
+            background-color: #555;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 17px;
+            transition: background-color 0.3s ease;
+        }
+
+        .topnav a:hover {
+            background-color: #777;
+            color: white;
+        }
+
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .clear {
+            clear: both;
+        }
+        @media screen and (max-width: 600px) {
+            .topnav a {
+                float: none;
+                width: 100%;
+                padding: 10px 15px;
+            }
+            .header h1 {
+                font-size: 36px;
+            }
+            .header p {
+                font-size: 16px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>RE BOOK</h1>
+        <p>다시 읽고 기록하고 도전하는 책 습관 만들기</p>
+    </div>
+
+    <div class="topnav">
+        <a href="index.html">홈</a> 
+        <a href="a.html" class="active">신간 도서</a>
+        <a href="b.html">책 리스트</a>
+        <a href="c.html">책 평점</a>
+        <a href="d.html">독서 챌린지</a>
+        <a href="e.html" style="float:right">성남시 공공 도서관</a>
+    </div>
+
+    <div id="right">
+        <div id="main_title">
+            [   신간 도서   ]
+        </div>
+        <img id="main_img" src="book5.jpg" alt="대표 책 이미지">
+        <div id="thumnail">
+            <img id="move_left" src="free-icon-left.png">
+            <ul id="photos">
+                <li><a href="a.html"><img src="book1.jpg"></a></li>
+                <li><a href="a-2.html"><img src="book2.jpg"></a></li>
+                <li><a href="a-3.html"><img src="book3.jpg"></a></li>
+                <li><a href="a-4.html"><img src="book4.jpg"></a></li>
+                <li><a href="#"><img src="book5.jpg"></a></li>
+                <li><a href="a-6.html"><img src="book6.jpg"></a></li>
+            </ul>
+            <img id="move_right" src="free-icon-right-chevron-8213522.png">
+        </div>
+    </div>
+</body>
+</html>

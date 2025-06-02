@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RE BOOK</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "돋움";
+            padding: 10px;
+            background-color: #f1f1f1;
+            color: #444444;
+            line-height: 1.6;
+        }
+
+        .header {
+            padding: 30px;
+            text-align: center;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        
+        .topnav {
+            overflow: hidden;
+            background-color: #555;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 17px;
+            transition: background-color 0.3s ease;
+        }
+
+        .topnav a:hover {
+            background-color: #777;
+            color: white;
+        }
+
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        
+        .row:after { 
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .leftcolumn {
+            float: left;
+            width: 68%;
+            padding-right: 20px;
+        }
+
+        .rightcolumn {
+            float: left;
+            width: 32%;
+            padding-left: 20px;
+            background-color: #f1f1f1;
+        }
+        
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .card h5 {
+            font-size: 16px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .fake-img {
+            background-color: #e0e0e0;
+            width: 100%;
+            padding-top: 50%;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .fake-img img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+
+        .card p {
+            margin-bottom: 10px;
+            font-size: 15px;
+            color: #555;
+        }
+
+        .footer {
+            padding: 25px;
+            text-align: center;
+            background: #444;
+            color: white;
+            margin-top: 20px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        @media screen and (max-width: 800px) {
+            .leftcolumn, .rightcolumn {
+                float: none; 
+                width: 100%;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            .rightcolumn {
+                margin-top: 20px; 
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav a {
+                float: none;
+                width: 100%;
+                padding: 10px 15px;
+            }
+            .header h1 {
+                font-size: 36px;
+            }
+            .header p {
+                font-size: 16px;
+            }
+            .card h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>RE BOOK</h1>
+        <p>다시 읽고 기록하고 도전하는 책 습관 만들기</p>
+    </div>
+
+    <div class="topnav">
+        <a href="#" class="active">홈</a> 
+        <a href="a.html">신간 도서</a>
+        <a href="b.html">책 리스트</a>
+        <a href="c.html">책 평점</a>
+        <a href="d.html">독서 챌린지</a>
+        <a href="e.html" style="float:right">성남시 공공 도서관</a>
+    </div>
+
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card">
+                <h2>도서 행사 소식</h2>
+                <h5>새로운 책들을 만나보세요</h5>
+                <div class="fake-img">
+                    <img src="banner1.png" alt="도서전 배너">
+                </div>
+                <b>2025 서울 국제 도서전: 믿을 구석 The Last Resort</b><br>
+                <p>2025.06.18(수) ~ 06.22(일) | 코엑스 A&B1홀 (서울 강남구 영동대로 513)<br><br>
+                무엇이든 보관할 수 있는 수직형 가구를 책꽂이라 부르고, 무언가를 올려놓을 수 있는 수평형 가구를 책상 이라고 부르는 것은 책이 우리 삶의 일부로서 존재한다는 것을 의미합니다.
+                사람들이 책장에서 책을 꺼내는 모습과 책상에 앉아 책을 읽는 모습을 동시에 담고 있는 서울국제도서전의 CI를 통해 ‘책’과 함께하는 삶의 모습을 전하고자 합니다.</p>
+            </div>
+            </div>
+        <div class="rightcolumn">
+            <div class="card">
+                <h3>실시간 인기 카테고리</h3>
+                <p>1. 소설</p>
+                <p>2. 인문학</p>
+                <p>3. 자기계발</p>
+                <p>4. SF/판타지</p>
+                <p>5. 경제/경영</p>
+            </div>
+            <div class="card">
+                <h3>문의 & 피드백</h3>
+                <p>궁금한 점이나 건의사항이 있다면 언제든지 문의해주세요.</p>
+                <p>RE_BOOK@example.com</p>
+            </div>
+            </div>
+        </div>
+
+    <div class="footer">
+        <h2>&copy; RE BOOK.</h2>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>책 리스트 (겹침 방지 및 하단 정렬)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "돋움", sans-serif;
+            font-size: 14px;
+            color: #444444;
+            padding: 20px;
+        }
+        ul {
+            list-style-type: none;
+        }
+
+        #main_title {
+            font-family: '돋움', sans-serif;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: solid 2px #aaaaaa;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .product-list {
+            overflow: hidden;
+            width: 100%;
+            margin: 0 auto;
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+
+        .list_item {
+            float: left;
+            width: calc(37.6% - 20px);
+            margin: 10px;
+            padding: 15px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: none;
+            border-bottom: 1px solid #e0e0e0;
+            
+            position: relative;
+            min-height: 200px;
+        }
+
+        .list_item:hover {
+            background-color: #f0f0f0;
+        } 
+
+        .image_container {
+            float: left;
+            width: 30%;
+            margin-right: 15px;
+            text-align: center;
+        }
+
+        .image_container img {
+            width: 100%;
+            max-width: 110px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 5px;
+        }
+
+        .text_info {
+            overflow: hidden;
+            min-height: 170px;
+            position: relative;
+        }
+        
+        .text_content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding-top: 5px;
+            text-align: left;
+        }
+
+        .book_title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 16px;
+            line-height: 1.4;
+            overflow: hidden;
+            height: 22px;
+        }
+
+        .book_details {
+            font-size: 13px;
+            color: #777;
+            margin-bottom: 5px;
+        }
+        .book_details li {
+            margin-bottom: 3px;
+        }
+
+        .review_summary {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+            overflow: hidden;
+        }
+
+        @media (min-width: 1200px) {
+            .list_item {
+                width: 31.3%;
+            }
+        }
+        
+        @media (max-width: 1199px) {
+            .list_item {
+                width: 48%;
+            }
+        }
+
+        @media (max-width: 719px) {
+            .list_item {
+                width: 96%;
+                float: none;
+                margin: 10px auto;
+                
+                min-height: 300px;
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
+            
+            .image_container {
+                float: none;
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            .image_container img {
+                max-width: 150px;
+            }
+            .text_info {
+                overflow: visible;
+                min-height: auto;
+                position: static;
+                text-align: center;
+            }
+            .text_content {
+                position: static;
+                bottom: auto;
+                left: auto;
+                right: auto;
+                padding-top: 0;
+            }
+        }
+        .header {
+            padding: 30px;
+            text-align: center;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        
+        
+        .topnav {
+            overflow: hidden;
+            background-color: #555;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 17px;
+            transition: background-color 0.3s ease;
+        }
+
+        .topnav a:hover {
+            background-color: #777;
+            color: white;
+        }
+
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .clear {
+            clear: both;
+        }
+        @media screen and (max-width: 600px) {
+            .topnav a {
+                float: none;
+                width: 100%;
+                padding: 10px 15px;
+            }
+            .header h1 {
+                font-size: 36px;
+            }
+            .header p {
+                font-size: 16px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>RE BOOK</h1>
+        <p>다시 읽고 기록하고 도전하는 책 습관 만들기</p>
+    </div>
+
+    <div class="topnav">
+        <a href="index.html">홈</a> 
+        <a href="a.html">신간 도서</a>
+        <a href="b.html">책 리스트</a>
+        <a href="c.html" class="active">책 평점</a>
+        <a href="d.html">독서 챌린지</a>
+        <a href="e.html" style="float:right">성남시 공공 도서관</a>
+    </div>
+    <h1 id="main_title">책 평점</h1>
+
+    <div class="product-list">
+        <div class="list_item">
+            <div class="image_container">
+                <img src="read_book1.jpg" alt="럭키 드로우">
+            </div>
+            <div class="text_info">
+                <div class="text_content">
+                    <div class="book_title">[ 럭키 드로우 ]</div>
+                    <ul class="book_details">
+                        <li>읽은 날짜: 2024.08.27</li>
+                        <li>평점: ★★★★☆</li>
+                    </ul>
+                    <div class="review_summary">"예측 불가능한 상황 속에서 일어나는 삶의 이야기"</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="list_item">
+            <div class="image_container">
+                <img src="read_book2.jpg" alt="인간 실격">
+            </div>
+            <div class="text_info">
+                <div class="text_content">
+                    <div class="book_title">[ 인간 실격 ]</div>
+                    <ul class="book_details">
+                        <li>읽은 날짜: 2024.06.07</li>
+                        <li>평점: ★★★☆☆</li>
+                    </ul>
+                    <div class="review_summary">"주인공의 내면을 적나라하게 파고들어 깊은 고독과 절망을 다룬 내용"</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="list_item">
+            <div class="image_container">
+                <img src="read_book3.jpg" alt="스물넷, 나는 한 번 죽은 적이 있다.">
+            </div>
+            <div class="text_info">
+                <div class="text_content">
+                    <div class="book_title">[ 스물넷, 나는 한 번 죽은 적이 있다 ]</div>
+                    <ul class="book_details">
+                        <li>읽은 날짜: 2024.07.25</li>
+                        <li>평점: ★★★★★</li>
+                    </ul>
+                    <div class="review_summary">"삶의 진정한 가치를 발견하는 역설적이면서도 희망적인 내용"</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="list_item">
+            <div class="image_container">
+                <img src="read_book4.jpg" alt="고층 입원실의 갱스터 할머니">
+            </div>
+            <div class="text_info">
+                <div class="text_content">
+                    <div class="book_title">[ 고층 입원실의 갱스터 할머니 ]</div>
+                    <ul class="book_details">
+                        <li>읽은 날짜: 2024.07.23</li>
+                        <li>평점: ★★★★★</li>
+                    </ul>
+                    <div class="review_summary">"밝게만 보였던 한 유튜버의 투병 생활 속 내용"</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="list_item">
+            <div class="image_container">
+                <img src="read_book5.jpg" alt="프로젝트 헤일메리">
+            </div>
+            <div class="text_info">
+                <div class="text_content">
+                    <div class="book_title">[ 프로젝트 헤일메리 ]</div>
+                    <ul class="book_details">
+                        <li>읽은 날짜: 2024.07.11</li>
+                        <li>평점: ★★★★★</li>
+                    </ul>
+                    <div class="review_summary">"지구를 지키기 위해 우주로 떠난 주인공의 모험이 돋보이는 SF"</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="list_item">
+            <div class="image_container">
+                <img src="read_book6.jpg" alt="미움 받을 용기">
+            </div>
+            <div class="text_info">
+                <div class="text_content">
+                    <div class="book_title">[ 미움 받을 용기 ]</div>
+                    <ul class="book_details">
+                        <li>읽은 날짜: 2024.08.01</li>
+                        <li>평점: ★★★★★</li>
+                    </ul>
+                    <div class="review_summary">"타인의 시선에서 벗어나 나답게를 심리학, 철학 관점에서 논하는 내용"</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

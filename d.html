@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>독서 챌린지</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "돋움",;
+            font-size: 16px;
+            color: #444444;
+            padding: 20px;
+        }
+        ul {
+            list-style-type: none;
+        }
+
+        #main_title {
+            font-family: '돋움';
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: solid 2px #aaaaaa;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .challenge-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+
+        .challenge-container h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .challenge-list {
+            padding-top: 10px;
+        }
+
+        .challenge-item {
+            display: block;
+            padding: 15px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .challenge-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        .challenge-text {
+            float: left;
+            width: 85%;
+            font-size: 18px;
+            line-height: 24px;
+            color: #555;
+            padding-right: 10px;
+        }
+
+        .checkbox-container {
+            float: right;
+            width: 15%;
+            height: 30px;
+            text-align: center;
+            padding-top: 3px;
+        }
+
+        .challenge-item input[type="checkbox"] {
+            width: 24px;
+            height: 24px;
+        }
+
+        @media (max-width: 600px) {
+            .challenge-container {
+                padding: 15px;
+            }
+            .challenge-container h2 {
+                font-size: 20px;
+            }
+            .challenge-item {
+                padding: 10px;
+            }
+            .challenge-text {
+                width: 80%;
+                font-size: 16px;
+            }
+            .checkbox-container {
+                width: 20%;
+                height: 25px;
+                padding-top: 1px;
+            }
+            .challenge-item input[type="checkbox"] {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        .header {
+            padding: 30px;
+            text-align: center;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        
+        
+        .topnav {
+            overflow: hidden;
+            background-color: #555;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 17px;
+            transition: background-color 0.3s ease;
+        }
+
+        .topnav a:hover {
+            background-color: #777;
+            color: white;
+        }
+
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .clear {
+            clear: both;
+        }
+        @media screen and (max-width: 600px) {
+            .topnav a {
+                float: none;
+                width: 100%;
+                padding: 10px 15px;
+            }
+            .header h1 {
+                font-size: 36px;
+            }
+            .header p {
+                font-size: 16px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>RE BOOK</h1>
+        <p>다시 읽고 기록하고 도전하는 책 습관 만들기</p>
+    </div>
+
+    <div class="topnav">
+        <a href="index.html">홈</a> 
+        <a href="a.html">신간 도서</a>
+        <a href="b.html">책 리스트</a>
+        <a href="c.html">책 평점</a>
+        <a href="d.html"  class="active">독서 챌린지</a>
+        <a href="e.html" style="float:right">성남시 공공 도서관</a>
+    </div>
+    <h1 id="main_title">독서 챌린지</h1>
+
+    <div class="challenge-container">
+        <h2>2025 독서 챌린지</h2>
+        <ul class="challenge-list">
+            <li class="challenge-item">
+                <div class="challenge-text">경제 관련 도서 5권 완독하기</div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="goal1">
+                </div>
+            </li>
+            <li class="challenge-item">
+                <div class="challenge-text">독서록 한권 다 쓰기</div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="goal2">
+                </div>
+            </li>
+            <li class="challenge-item">
+                <div class="challenge-text">서점가서 구매한 책 당일 완독하기</div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="goal3">
+                </div>
+            </li>
+            <li class="challenge-item">
+                <div class="challenge-text">월 1회 독서 모임 참여하기</div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="goal4">
+                </div>
+            </li>
+            <li class="challenge-item">
+                <div class="challenge-text">도서관 방문 횟수 늘리기 (월 2회 이상)</div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="goal5">
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

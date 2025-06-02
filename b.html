@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>책 리스트</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "돋움";
+            font-size: 14px;
+            color: #444444;
+            padding: 20px;
+        }
+        ul {
+            list-style-type: none;
+        }
+
+        #main_title {
+            font-family: '돋움';
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: solid 2px #aaaaaa;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .product-list {
+            overflow: hidden; 
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .list_item {
+            float: left;
+            width: 31.3%;
+            margin: 10px;
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: #ffffff;
+        }
+
+        .list_item:hover {
+            background-color: #f0f0f0;
+        } 
+
+        .image img {
+            width: 100%;
+            /* height: 180px; */
+            display: block;
+            margin: 0 auto 15px auto;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+
+        .intro {
+            font-weight: bold;
+            margin-bottom: 10px;
+            overflow: hidden; 
+            line-height: 20px;
+        }
+        .intro a {
+            text-decoration: none;
+            color: #444444;
+        }
+
+        .price {
+            margin-bottom: 10px;
+        }
+        .price li.red {
+            font-weight: bold;
+            color: #e25147;
+            font-size: 16px;
+        }
+        .price li.small {
+            font-size: 12px;
+            margin-top: 5px;
+            color: #777;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        @media (max-width: 960px) {
+            .list_item {
+                width: 47%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .list_item {
+                width: 95%;
+                float: none;
+                margin: 10px auto;
+            }
+        }
+        .header {
+            padding: 30px;
+            text-align: center;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        
+        
+        .topnav {
+            overflow: hidden;
+            background-color: #555;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 17px;
+            transition: background-color 0.3s ease;
+        }
+
+        .topnav a:hover {
+            background-color: #777;
+            color: white;
+        }
+
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .clear {
+            clear: both;
+        }
+        @media screen and (max-width: 600px) {
+            .topnav a {
+                float: none;
+                width: 100%;
+                padding: 10px 15px;
+            }
+            .header h1 {
+                font-size: 36px;
+            }
+            .header p {
+                font-size: 16px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>RE BOOK</h1>
+        <p>다시 읽고 기록하고 도전하는 책 습관 만들기</p>
+    </div>
+
+    <div class="topnav">
+        <a href="index.html">홈</a> 
+        <a href="a.html">신간 도서</a>
+        <a href="b.html" class="active">책 리스트</a>
+        <a href="c.html">책 평점</a>
+        <a href="d.html">독서 챌린지</a>
+        <a href="e.html" style="float:right">성남시 공공 도서관</a>
+    </div>
+    <h1 id="main_title">책 리스트</h1>
+
+    <div class="product-list">
+        <div class="list_item">
+            <div class="image"><img src="list_book1.jpg"></div>
+            <div class="intro">[  우리의 낙원에서 만나자  ]</div>
+            <div class="price">
+                <ul>
+                    <li class="small">허태완 | 북로망스 | 2025.05.21</li>
+                    <li class="red">19,500</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="list_item">
+            <div class="image"><img src="list_book2.jpg"></div>
+            <div class="intro">[  소년이 온다  ]</div>
+            <div class="price">
+                <ul>
+                    <li class="small">한강 | 창비 | 2014.05.19</li>
+                    <li class="red">15,000</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="list_item">
+            <div class="image"><img src="list_book3.jpg"></div>
+            <div class="intro">[  마흔에 읽는 쇼펜하우어  ]</div>
+            <div class="price">
+                <ul>
+                    <li class="small">강용수 | 유노북스 | 2023.09.07</li>
+                    <li class="red">17,000</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="list_item">
+            <div class="image"><img src="list_book4.jpg"></div>
+            <div class="intro">[  나를 소모하지 않는 현명한 태도에 관하여  ]</div>
+            <div class="price">
+                <ul>
+                    <li class="small">마티아스 뇔케 | 퍼스트펭귄 | 2024.03.10</li>
+                    <li class="red">17,800</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="list_item">
+            <div class="image"><img src="list_book5.jpg"></div>
+            <div class="intro">[  트렌드 코리아 2025  ]</div>
+            <div class="price">
+                <ul>
+                    <li class="small">김난도 외 | 미래의 창 | 2024.10.07</li>
+                    <li class="red">20,000</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="list_item">
+            <div class="image"><img src="list_book6.jpg"></div>
+            <div class="intro">[  THE MONEY BOOK(더 머니북)  ]</div>
+            <div class="price">
+                <ul>
+                    <li class="small">토스 | 비바리퍼블리카 | 2024.05.27</li>
+                    <li class="red">22,000</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
